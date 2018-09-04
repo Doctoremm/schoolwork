@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot.ma
-//Last modified: Tue, Sep 04, 2018 01:27:10 PM
+//Last modified: Tue, Sep 04, 2018 02:51:01 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,13 +14,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.4095112396631224 32.083686355453864 36.09697422289657 ;
-	setAttr ".r" -type "double3" -38.738352515565708 -5768.5999999997393 8.0418057026681512e-16 ;
+	setAttr ".t" -type "double3" -1.6134267618562856 31.048269788457795 23.679315300817034 ;
+	setAttr ".r" -type "double3" -45.938352515565725 -5763.399999999725 3.9827035954849531e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 53.051139937318027;
+	setAttr ".coi" 42.744252873969323;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

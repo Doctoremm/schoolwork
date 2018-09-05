@@ -18,8 +18,30 @@ global proc RandDup() {
     string $obj[] = `Objects`;
     int $randNum = rand (1, 50);
     for ($i=0; $i<$randNum; $i++){
+       /* $yMove = rand (-10, 10);
+        $xMove = rand (-10, 10);
+        $zMove = rand (-10, 10);
+        
+        move -r $xMove $yMove $zMove $obj;*/
+         
         duplicate -rr $obj;
-    }
-     
+        
+    }    
 }
+
 RandDup();
+
+select -all;
+
+global proc RandMove() {
+    string $things[] = `ls -selection`;
+    for ($object in $things){
+        $yMove = rand (-10, 10);
+        $xMove = rand (-10, 10);
+        $zMove = rand (-10, 10);
+        
+        move -r $xMove $yMove $zMove $object;
+    }
+}
+
+RandMove();

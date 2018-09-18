@@ -1,1 +1,37 @@
-i
+global proc Rename (string $input){
+    
+    string $new[];  //hold split input
+    tokenize $input "#" $new; //split input
+    string $object = $new[0];
+    string $type = $new[1];
+    
+    string $selected[] = `ls -selection`;  //lists selected objects
+    int $num = 1; //counter
+    
+    int $hash = size($input) - (size($object) + size($type));  // number of ##
+    
+    for ($obj in $selected) {
+        
+        string $pad;
+        int $digits;
+        
+        for ($i = 1; $i <= $num; $i*= 10){
+            
+            $digits++;  //finding number of digits in selection
+        }
+        
+        int $dif = $hash - $digits; //difference
+        
+        for ($i = 0; $i < $dif; $i++){
+            
+            $pad += "0"; //add padding
+        }
+        
+        $pad += $num; //add padding to number
+        $num++;
+        
+        string $renamer = $object + $pad + $type; //put back together      
+        rename $obj $renamer; //renames object
+    }    
+}
+Rename ("Leg_##_Jnt");

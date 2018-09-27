@@ -1,4 +1,4 @@
-global proc CreateCtrls (int $color )
+global proc CreateCtrls (int $color, string $shape)
 {//create controls
     
     string $sels[] = `ls -selection`;
@@ -13,66 +13,89 @@ global proc CreateCtrls (int $color )
         CtrlColor ($ctrl, $color);
         //define color of control
         
+        CtrlShape ($ctrl, $shape);
         //define shape of control
         
         Grps($ctrl);
         //groups control under empty grp
         
+        
         //match control xforms to selection (at origin if no selection)
         
+        
         //constrain joint to control
-
     }   
 }
-
+CreateCtrls(10, "diamond");
 
 
 
 global proc Grps (string $ctrl)
-{   //making groups(xforms, naming)
+{//making groups(xforms, naming)
     
     string $grpName;
     string $grp;
-
+    string $sels[] = `ls -selection`;
     string $nam;
-    $nam = `shortNameOf $ctrl`;
-    //find name of selection
     
-    $grpName = $nam + "_Grp";
-    //copy name to grp name + _grp to end
+    for ($sel in $sels)
+    {
+        $nam = `shortNameOf $ctrl`;
+        //find name of selection
+    
+        $grpName = $nam + "_Grp";
+        //copy name to grp name + _grp to end
 
-    $grp = `group -em -name $grpName`;
-    // create an empty group node with no children
+        $grp = `group -em -name $grpName`;
+        // create an empty group node with no children
     
-    parent -relative $ctrl $grp;
-    //grp ctrls to grp node
-        
-    //find xforms of selection    
-    //match xforms of grps to xforms of selection
-    
+        parent -relative $ctrl $grp;
+        //grp ctrls to grp node
+
+
+        matchTransform $grp $sel;
+        //match xforms of grps to xforms of selection
+    }
 }
+Grps("nurbsCircle1");
+
 
 
 global proc CtrlShape (string $ctrl, string $shape)
-{   //different control shapes
+{//different control shapes
     
+    if ($shape == "circle"){}
+    else if ($shape == "diamond")
+    {
+        select -r nurbsCircle1.cv[2] nurbsCircle1.cv[4] ;
+        select -tgl nurbsCircle1.cv[0] nurbsCircle1.cv[6] ;
+        //select vertex's of ctrl
         
-    //select vertex's of ctrl
-    
-    //scale to appropriate shape
-    
-    //hardcode different shapes???
-    
-    
-}   
-    
-    
-    
+        scale -r -p 0cm 0cm 0cm 0.042 0.042 0.042 ;
+        //scale to appropriate shape
+    }
+    else if ($shape == "flower")
+    {
+        select -r nurbsCircle1.ep[1] nurbsCircle1.ep[5] ;
+        select -tgl nurbsCircle1.ep[3] nurbsCircle1.ep[7] ;
+        
+        scale -r -p 0cm 0cm 0cm 0.0141785 0.0141785 0.0141785 ;
+    }
+    //hardcode different shapes    
+}
+CtrlShape ("nurbsCircle1", "circle");
+
+
+
+
     //constrain selection to control
-    
-    
+
+
+
+
+
 global proc CtrlColor (string $ctrl, int $color)
-{   //control coloring
+{//control coloring
 
     string $shapes[];        
     $shapes = `listRelatives -shapes $ctrl`;

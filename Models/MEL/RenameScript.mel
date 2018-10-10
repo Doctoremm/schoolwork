@@ -34,4 +34,3 @@ global proc Rename (string $input){
         rename $obj $renamer; //renames object
     }    
 }
-Rename ("Leg_##_Jnt");

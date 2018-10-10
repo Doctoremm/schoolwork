@@ -1,4 +1,31 @@
-global proc string[] Objects() {
+global proc RandMove(int $dup, float $xName, float $yName, float $zName)
+{
+    string $things[] = `ls -selection`;
+   
+    int $randNum =  `GetIntFieldGrpValue ($dup)`; //rand (1, 50);
+    
+    float $xMove = `GetFloatFieldValue ($xName)`;
+    float $yMove = `GetFloatFieldValue ($yName)`;
+    float $zMove = `GetFloatFieldValue ($zName)`;
+    
+    for ($i=0; $i<$randNum; $i++){
+              
+        duplicate -rr $things;
+        
+        $yMove = rand (-10, 10);
+        $xMove = rand (-10, 10);
+        $zMove = rand (-10, 10);        
+        for ($object in $things){
+        
+            move -r $xMove $yMove $zMove $object;
+        }
+    }  
+}
+
+
+
+
+/*global proc string[] Objects() {
     string $objects[];
     polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
     string $sels[] = `ls -selection`;
@@ -11,9 +38,6 @@ global proc string[] Objects() {
     return $objects;
 }
 
-Objects();
-
-
 global proc RandDup() {
     string $obj[] = `ls -selection`;
     int $randNum = rand (1, 50);
@@ -23,20 +47,4 @@ global proc RandDup() {
         
     }    
 }
-
-RandDup();
-
-
-global proc RandMove(float $yMove, float $xMove, float $zMove) {
-    string $things[] = `ls -selection`;
-    
-    $yMove = rand (-10, 10);
-    $xMove = rand (-10, 10);
-    $zMove = rand (-10, 10);        
-    for ($object in $things){
-        
-        move -r $xMove $yMove $zMove $object;
-    }
-}
-
-RandMove(5, 5, 5);
+*/

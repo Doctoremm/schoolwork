@@ -1,0 +1,91 @@
+global proc RenameUI()
+{
+    string $mainWind = "Renaming";
+    
+    if (`window -exists $mainWind`)
+        deleteUI $mainWind;
+    
+    $mainWind = `window -title "Renamer" $mainWind`;
+    
+    string $mainCol = `columnLayout -parent $mainWind`;
+    string $newName = `textFieldButtonGrp -parent $mainCol -buttonLabel "NewName" -buttonCommand ("Rename(\"" + $input + "\")") `;
+    //creates an editable field with a button
+    
+    showWindow $mainWind;
+}
+RenameUI();
+
+
+
+
+global proc RandPlaceUI()
+{
+    string $mainWindow = "RandPlaceGenerator";
+    
+    if (`window -exists $mainWindow`)
+        deleteUI $mainWindow;
+    
+    $mainWindow = `window -title "Random Placement" $mainWindow`;
+    //creates Window
+    
+    string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+    //initial Column Layout
+    
+    string $dupNum = `intFieldGrp -parent $mainCol -value1 1 -label "Number of Duplicates"`;
+    //First field for duplicate number
+    
+    string $rangeRowFirst = `rowLayout -parent $mainCol -numberOfColumns 7`;
+    //Row Layout for 7 different fields in the row
+    
+    text -parent $rangeRowFirst -label "Range Min";
+    string $xMinRange = `floatField -parent $rangeRowFirst -precision 2 -value 0`;
+    text -parent $rangeRowFirst -label "X";
+    string $yMinRange = `floatField -parent $rangeRowFirst -precision 2 -value 0`;
+    text -parent $rangeRowFirst -label "Y";
+    string $zMinRange = `floatField -parent $rangeRowFirst -precision 2 -value 0`;
+    text -parent $rangeRowFirst -label "Z";
+    
+    string $rangeRowSecond = `rowLayout -parent $mainCol -numberOfColumns 7`;
+    //Row Layout for 7 different fields in the row
+    
+    text -parent $rangeRowSecond -label "Range Max";
+    string $xMaxRange = `floatField -parent $rangeRowSecond -precision 2 -value 0`;
+    text -parent $rangeRowSecond -label "X";
+    string $yMaxRange = `floatField -parent $rangeRowSecond -precision 2 -value 0`;
+    text -parent $rangeRowSecond -label "Y";
+    string $zMaxRange = `floatField -parent $rangeRowSecond -precision 2 -value 0`;
+    text -parent $rangeRowSecond -label "Z";
+    
+    string $button = `button -parent $mainCol -label "Generate" -command ("RandMove(\"" + $dupNum + "\", \"" + $xMinRange + "\", \"" + $yMinRange + "\", \"" + $zMinRange + "\", \"" + $xMaxRange + "\", \"" + $yMaxRange + "\", \"" + $zMaxRange + "\")") `;
+    //creates button
+    
+    
+    showWindow $mainWindow;
+    //actually creates the window to use
+}
+RandPlaceUI();
+
+
+global proc float GetFloatFieldValue (string $control)
+{
+    float $value = `floatField -q -value $control`;
+    //getting the actual value of the floatField
+    
+    return $value;
+}
+
+
+global proc int GetIntFieldGrpValue (string $control)
+{
+    int $value = `intFieldGrp -q -value1 $control`;
+    //getting the actual value of what intFieldGrp is
+    
+    return $value;
+}
+
+global proc string GetTextFieldButtonGrpString (string $control)
+{
+    string $string = `textFieldButtonGrp -q -editable $control`;
+    
+    return $string;
+}

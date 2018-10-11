@@ -1,20 +1,28 @@
-global proc RandMove(int $dup, float $xName, float $yName, float $zName)
+global proc RandMove(string $dup, string $xMinName, string $yMinName, string $zMinName, string $xMaxName, string $yMaxName, string $zMaxName)
 {
     string $things[] = `ls -selection`;
    
     int $randNum =  `GetIntFieldGrpValue ($dup)`; //rand (1, 50);
     
-    float $xMove = `GetFloatFieldValue ($xName)`;
-    float $yMove = `GetFloatFieldValue ($yName)`;
-    float $zMove = `GetFloatFieldValue ($zName)`;
+    float $xMinRand = `GetFloatFieldValue ($xMinName)`;
+    float $yMinRand = `GetFloatFieldValue ($yMinName)`;
+    float $zMinRand = `GetFloatFieldValue ($zMinName)`;
+
+    float $xMaxRand = `GetFloatFieldValue ($xMaxName)`;
+    float $yMaxRand = `GetFloatFieldValue ($yMaxName)`;
+    float $zMaxRand = `GetFloatFieldValue ($zMaxName)`;
+
+    float $xMove;
+    float $yMove;
+    float $zMove;
     
     for ($i=0; $i<$randNum; $i++){
               
         duplicate -rr $things;
         
-        $yMove = rand (-10, 10);
-        $xMove = rand (-10, 10);
-        $zMove = rand (-10, 10);        
+        $yMove = rand ($yMinRand, $yMaxRand);
+        $xMove = rand ($xMinRand, $xMaxRand);
+        $zMove = rand ($zMinRand, $zMaxRand);        
         for ($object in $things){
         
             move -r $xMove $yMove $zMove $object;

@@ -1,7 +1,10 @@
-global proc Rename (string $input){
-    
+global proc Rename (string $input)
+{    
     string $new[];  //hold split input
-    tokenize $input "#" $new; //split input
+    
+    string $nam = GetTextFieldButtonGrpString ($input);
+    
+    tokenize $nam "#" $new; //split input
     string $object = $new[0];
     string $type = $new[1];
     

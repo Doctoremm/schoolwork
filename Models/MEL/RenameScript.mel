@@ -1,9 +1,9 @@
 global proc Rename (string $input)
-{    
+{   
     string $new[];  //hold split input
     
-    string $nam = GetTextFieldButtonGrpString ($input);
-    
+    string $nam = `GetTextFieldButtonGrpString ($input)`;
+
     tokenize $nam "#" $new; //split input
     string $object = $new[0];
     string $type = $new[1];
@@ -11,8 +11,8 @@ global proc Rename (string $input)
     string $selected[] = `ls -selection`;  //lists selected objects
     int $num = 1; //counter
     
-    int $hash = size($input) - (size($object) + size($type));  // number of ##
-    
+    int $hash = size($nam) - (size($object) + size($type));  // number of ##
+    print ($hash);
     for ($obj in $selected) {
         
         string $pad;

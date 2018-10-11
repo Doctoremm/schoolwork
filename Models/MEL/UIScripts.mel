@@ -8,7 +8,8 @@ global proc RenameUI()
     $mainWind = `window -title "Renamer" $mainWind`;
     
     string $mainCol = `columnLayout -parent $mainWind`;
-    string $newName = `textFieldButtonGrp -parent $mainCol -buttonLabel "NewName" -buttonCommand ("Rename(\"" + $input + "\")") `;
+    string $newName =  "mer";
+    $newName = `textFieldButtonGrp -parent $mainCol -buttonLabel "NewName" -buttonCommand ("Rename(\"" + $newName + "\")") $newName`;
     //creates an editable field with a button
     
     showWindow $mainWind;
@@ -84,8 +85,8 @@ global proc int GetIntFieldGrpValue (string $control)
 }
 
 global proc string GetTextFieldButtonGrpString (string $control)
-{
-    string $string = `textFieldButtonGrp -q -editable $control`;
+{   
+    string $string = `textFieldButtonGrp -q -text $control`;
     
     return $string;
 }

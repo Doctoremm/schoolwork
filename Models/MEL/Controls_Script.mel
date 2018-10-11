@@ -38,7 +38,9 @@ global proc string CtrlShape (string $shape)
     
     if ($shape == "circle")
     {
-        $chosen = `circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1`;
+        $chosen = `curve -bezier -d 3 -p -0.992644 0 0.0162406 -p -0.992644 0 0.0162406 -p -1.03017 0 -0.978218 -p -0.00582132 0 -0.976203 -p 1.018528 0 -0.974188 -p 0.991766 0 0.0143858 -p 0.991766 0 0.0143858 -p 0.991766 0 0.0143858 -p 1.021642 0 0.986232 -p 0.00970051 0 1.00466 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 ;`;
+        bezierCurveToNurbs;
+        closeCurve -ch 1 -ps 1 -rpo 1 -bb 0.5 -bki 0 -p 0.1;
     }
     else if ($shape == "diamond")
     {

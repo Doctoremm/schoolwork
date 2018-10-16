@@ -67,6 +67,41 @@ global proc RandPlaceUI()
 RandPlaceUI();
 
 
+
+global proc CtrlsUI()
+{
+    string $mainWindow = "ControlCreator";
+    
+    if (`window -exists $mainWindow`)
+        deleteUI $mainWindow;
+    
+    $mainWindow = `window -title "Controls" $mainWindow`;
+    
+    string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+    
+    string $color = `colorIndexSliderGrp -parent $mainCol -label "Ctrl Color" -maxValue 26 -value 20 `;
+    //A color slider to choose color
+    
+    string $shapeOptions = `optionMenu -parent $mainCol -label "Shape"`;
+    string $optionCircle = `menuItem -parent $shapeOptions -label "Circle"`;
+    string $optionDiamond = `menuItem -parent $shapeOptions -label "Diamond"`;
+    string $optionFlower = `menuItem -parent $shapeOptions -label "Flower"`;
+    string $optionSquare = `menuItem -parent $shapeOptions -label "Square"`;
+    string $optionStar = `menuItem -parent $shapeOptions -label "Star"`;
+    //dropdown Menu for the different shape options
+    
+    string $constrainOptions = `checkBoxGrp -parent $mainCol -numberOfCheckBoxes 4 -label "Constrain" -label1 "Parent" -label2 "Rotate Only" -label3 "Translate Only" -label4 "None" -value1 1`;
+    
+    string $button = `button -parent $mainCol -label "Create Ctrls" -command ("CreateCtrls(\"" + $color + "\", \"" + $shapeOptions + "\", \"" + $constrainOptions + "\")") `;
+    
+    
+    showWindow $mainWindow;
+}
+CtrlsUI();
+
+
+
+
 global proc float GetFloatFieldValue (string $control)
 {
     float $value = `floatField -q -value $control`;
@@ -89,4 +124,29 @@ global proc string GetTextFieldButtonGrpString (string $control)
     string $string = `textFieldButtonGrp -q -text $control`;
     
     return $string;
+}
+
+global proc int GetColorIndexSlider (string $control)
+{
+    int $value = `colorIndexSliderGrp -q -value $control`;
+
+    return $value;
+}
+
+global proc int[] GetCheckboxGrpValue (string $control)
+{
+    int $value[];
+    int $value[0] = `checkBoxGrp -q -value1 $control`;
+    int $value[1] = `checkBoxGrp -q -value2 $control`;
+    int $value[2] = `checkBoxGrp -q -value3 $control`;
+    int $value[3] = `checkBoxGrp -q -value4 $control`;
+    
+    return $value;
+}
+
+global proc int GetOptionMenuValue (string $control)
+{
+    string $menuValue = `optionMenu -q -value $control`;
+    print($menuValue);
+    return $menuValue;
 }

@@ -79,7 +79,7 @@ global proc CtrlsUI()
     
     string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
     
-    string $color = `colorIndexSliderGrp -parent $mainCol -label "Ctrl Color" -maxValue 26 -value 20 `;
+    int $color = `colorIndexSliderGrp -parent $mainCol -label "Ctrl Color" -maxValue 32 -minValue 1 -value 20 `;
     //A color slider to choose color
     
     string $shapeOptions = `optionMenu -parent $mainCol -label "Shape"`;
@@ -92,12 +92,34 @@ global proc CtrlsUI()
     
     string $constrainOptions = `checkBoxGrp -parent $mainCol -numberOfCheckBoxes 4 -label "Constrain" -label1 "Parent" -label2 "Rotate Only" -label3 "Translate Only" -label4 "None" -value1 1`;
     
-    string $button = `button -parent $mainCol -label "Create Ctrls" -command ("CreateCtrls(\"" + $color + "\", \"" + $shapeOptions + "\", \"" + $constrainOptions + "\")") `;
+    string $button = `button -parent $mainCol -label "Create Ctrls" -command ("RunCreateCtrls(" + $color + ", \"" + $shapeOptions + "\", \"" + $constrainOptions + "\")") `;
     
     
     showWindow $mainWindow;
 }
 CtrlsUI();
+
+
+
+global proc ToolboxUI()
+{
+    string $mainWindow = "Toolbox";
+    
+    if (`window -exists $mainWindow`)
+        deleteUI $mainWindow;
+    
+    $mainWindow = `window -title "My Toolbox" $mainWindow`;
+    
+    string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+    string $ctrlsButton = `button -label "CreateCtrls" -parent $mainCol -command ("CtrlsUI()")`;
+    string $randomButton = `button -label "RandomPlacement" -parent $mainCol -command("RandPlaceUI()")`;
+    string $renameButton = `button -label "Rename" -parent $mainCol  -command("RenameUI()")`;
+    
+    
+    showWindow $mainWindow;
+}
+ToolboxUI();
+
 
 
 
@@ -126,10 +148,10 @@ global proc string GetTextFieldButtonGrpString (string $control)
     return $string;
 }
 
-global proc int GetColorIndexSlider (string $control)
+global proc int GetColorIndexSlider (int $control)
 {
     int $value = `colorIndexSliderGrp -q -value $control`;
-
+    print($value);
     return $value;
 }
 
@@ -149,4 +171,16 @@ global proc int GetOptionMenuValue (string $control)
     string $menuValue = `optionMenu -q -value $control`;
     print($menuValue);
     return $menuValue;
+}
+
+
+
+global proc RunCreateCtrls (int $color, string $shape, int $parent)
+{
+    int $newColor = `GetColorIndexSlider ($color)`;
+    string $newShape = `GetOptionMenuValue ($shape)`;
+    int $newParent[];
+    $newParent = `GetCheckboxGrpValue ($parent)`;
+    
+    CreateCtrls($newColor, $newShape, $newParent);
 }

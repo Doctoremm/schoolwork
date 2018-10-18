@@ -33,38 +33,38 @@ global proc string Grps (string $ctrl)
 
 global proc string CtrlShape (string $shape)
 {//different control shapes
-    
-    string $chosen[];
-    
-    if ($shape == "circle")
+
+    string $chosen;
+
+    if ($shape == "Circle")
     {
         $chosen = `curve -bezier -d 3 -p -0.992644 0 0.0162406 -p -0.992644 0 0.0162406 -p -1.03017 0 -0.978218 -p -0.00582132 0 -0.976203 -p 1.018528 0 -0.974188 -p 0.991766 0 0.0143858 -p 0.991766 0 0.0143858 -p 0.991766 0 0.0143858 -p 1.021642 0 0.986232 -p 0.00970051 0 1.00466 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 `;
         bezierCurveToNurbs;
         closeCurve -ch 1 -ps 1 -rpo 1 -bb 0.5 -bki 0 -p 0.1;
     }
-    else if ($shape == "diamond")
+    else if ($shape == "Diamond")
     {
         $chosen = `curve -bezier -d 3 -p 0 0 0.756541 -p 0 0 0.756541 -p 0.116125 0 0.346162 -p 0.223784 0 0.225908 -p 0.331443 0 0.105654 -p 0.756541 0 0 -p 0.756541 0 0 -p 0.756541 0 0 -p 0.383461 0 -0.0665918 -p 0.225993 0 -0.215387 -p 0.0685253 0 -0.364182 -p 0 0 -0.756541 -p 0 0 -0.756541 -p 0 0 -0.756541 -p -0.0744279 0 -0.384049 -p -0.214 0 -0.216697 -p -0.353572 0 -0.0493445 -p -0.7505 0 0.00341592 -p -0.7505 0 0.00341592 -p -0.7505 0 0.00341592 -p -0.367909 0 0.0462614 -p -0.223506 0 0.223118 -p -0.0791035 0 0.399975 -p 0 0 0.756541 -p 0 0 0.756541 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -k 5 -k 5 -k 5 -k 6 -k 6 -k 6 -k 7 -k 7 -k 7 -k 8 -k 8 -k 8 `;
         bezierCurveToNurbs;
     }
-    else if ($shape == "flower")
+    else if ($shape == "Flower")
     {
         $chosen = `curve -bezier -d 3 -p 0 0 -0.119885 -p 0 0 -0.119885 -p 0.627324 -0.0376643 0.181533 -p 0.434126 0 0.430367 -p 0.240928 0.0376643 0.679201 -p -0.119885 0 0 -p -0.119885 0 0 -p -0.119885 0 0 -p 0.220286 0 -0.690772 -p 0.431069 0 -0.426333 -p 0.641852 0 -0.161895 -p 0 0 0.119885 -p 0 0 0.119885 -p 0 0 0.119885 -p -0.695561 0 -0.153607 -p -0.413694 0 -0.42865 -p -0.131826 0 -0.703693 -p 0.119885 0 0 -p 0.119885 0 0 -p 0.119885 0 0 -p -0.14579 0 0.712775 -p -0.425601 0 0.429072 -p -0.705411 0 0.14537 -p 0 0 -0.119885 -p 0 0 -0.119885 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 -k 5 -k 5 -k 5 -k 6 -k 6 -k 6 -k 7 -k 7 -k 7 -k 8 -k 8 -k 8 `;
         bezierCurveToNurbs;
     }
-    else if ($shape == "square")
+    else if ($shape == "Square")
     {
         $choksen = `curve -bezier -d 3 -p -1 0 -1 -p -1 0 -1 -p -1 0 1 -p -1 0 1 -p -1 0 1 -p 1 0 1 -p 1 0 1 -p 1 0 1 -p 1 0 -1 -p 1 0 -1 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 `;
         bezierCurveToNurbs;
         closeCurve -ch 1 -ps 1 -rpo 1 -bb 0.5 -bki 0 -p 0.1;
     }
-    else if ($shape == "star")
+    else if ($shape == "Star")
     {
         $chosen = `curve -bezier -d 3 -p 0.00487043 0 -0.985579 -p 0.00487043 0 -0.985579 -p -0.993266 0 1.017513 -p -0.993266 0 1.017513 -p -0.993266 0 1.017513 -p 1.019307 0 0.00337355 -p 1.019307 0 0.00337355 -p 1.019307 0 0.00337355 -p -0.997062 0 0.00707674 -p -0.997062 0 0.00707674 -p -0.997062 0 0.00707674 -p 1.012879 0 1.024467 -p 1.012879 0 1.024467 -k 0 -k 0 -k 0 -k 1 -k 1 -k 1 -k 2 -k 2 -k 2 -k 3 -k 3 -k 3 -k 4 -k 4 -k 4 `;
         bezierCurveToNurbs;
         closeCurve -ch 1 -ps 1 -rpo 1 -bb 0.5 -bki 0 -p 0.1;
     }
-    return $chosen[0];
+    return $chosen;
     //hardcode different shapes    
 }
 
@@ -111,7 +111,7 @@ global proc CtrlColor (string $ctrl, int $color)
         if(`nodeType $shape` == "nurbsCurve")
         {
             setAttr($shape + ".overrideEnabled") 1;
-            setAttr($shape + ".overrideColor") $color;
+            setAttr($shape + ".overrideColor") ($color-1);
             //set color on ctrl to clr
         }
         
@@ -127,7 +127,7 @@ global proc CtrlColor (string $ctrl, int $color)
 
 global proc CreateCtrls (int $color, string $shape, int $parent[])
 {//create controls
-    
+
     string $sels[] = `ls -selection`;
     
     for ($sel in $sels)
@@ -136,14 +136,14 @@ global proc CreateCtrls (int $color, string $shape, int $parent[])
 
         string $ctrl = `CtrlShape($shape)`;
         //define shape of control
-        
+
         string $ctrlName;
         $ctrlName = `rename $ctrl ($nam + "_Ctrl")`;
         //rename according to selection 
-        
+
         CtrlColor ($ctrlName, $color);
         //define color of control
-        
+
         string $grpTrans;               
         $grpTrans = `Grps ($ctrlName)`;
         //groups control under empty grp

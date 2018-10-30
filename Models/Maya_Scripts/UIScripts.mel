@@ -79,7 +79,7 @@ global proc CtrlsUI()
     
     string $mainCol = `columnLayout -parent $mainWindow -adjustableColumn 1`;
     
-    string $color = `colorIndexSliderGrp -parent $mainCol -label "Ctrl Color" -maxValue 32 -minValue 0 -value  `;
+    string $color = `colorIndexSliderGrp -parent $mainCol -label "Ctrl Color" -maxValue 32 -minValue 0 -value 20 `;
     //A color slider to choose color
     
     string $shapeOptions = `optionMenu -parent $mainCol -label "Shape"`;

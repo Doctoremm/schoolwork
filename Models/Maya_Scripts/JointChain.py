@@ -4,9 +4,11 @@ import maya.cmds as cmds
 
 def JointChain():
     
+    jnts = cmds.ls(selection = True)
     #list current selection
     
-    #for loop
+    for jnt in jnts:
+        
     
     #create a joint 
     

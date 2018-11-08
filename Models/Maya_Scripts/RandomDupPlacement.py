@@ -34,7 +34,7 @@ def RandMove(dup, xMin, yMin, zMin, xMax, yMax, zMax):
         zMove = random.randrange (zMinRand, zMaxRand)  
               
         for object in things:
-            cmds.move ( xMove, yMove, zMove, object, r=True)
+            cmds.move ( xMove, yMove, zMove, object, r=True, ws=True)
             
         i+=1
 

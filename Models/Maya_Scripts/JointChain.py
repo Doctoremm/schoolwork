@@ -1,17 +1,15 @@
 import maya.cmds as cmds
 
-#Joint chain script
 
 def JointChain():
     
-    jnts = cmds.ls(selection = True)
-    #list current selection
+    sels = cmds.ls(selection = True)
+    #stores selection
+    cmds.select(cl=True)
+    #clears selection, but selection is stored in variable sels, that's why below works
     
-    for jnt in jnts:
+    for sel in sels:
+        cmds.matchTransform(cmds.joint(), sel) 
         
-    
-    #create a joint 
-    
-    #position joint at center of each selection
-    
-    #parent joint chain into hierarchy matching selection order
+
+JointChain()

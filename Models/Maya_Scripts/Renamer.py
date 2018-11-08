@@ -54,4 +54,4 @@ def Rename (input):
         cmds.rename (obj, renamer)
         #renames object
 
-Rename("Name_##_Jnt")
+Rename("L_Arm_#_Jnt")

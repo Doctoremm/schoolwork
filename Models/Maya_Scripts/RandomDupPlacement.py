@@ -27,14 +27,13 @@ def RandMove(dup, xMin, yMin, zMin, xMax, yMax, zMax):
     i=0
     while i < randNum:
               
-        cmds.duplicate (things, rr=True)
+        object = cmds.duplicate (things, rr=True)
         
         yMove = random.randrange (yMinRand, yMaxRand)
         xMove = random.randrange (xMinRand, xMaxRand)
         zMove = random.randrange (zMinRand, zMaxRand)  
               
-        for object in things:
-            cmds.move ( xMove, yMove, zMove, object, r=True, ws=True)
+        cmds.move ( xMove, yMove, zMove, object, r=True, ws=True)
             
         i+=1
 

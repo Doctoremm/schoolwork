@@ -1,6 +1,7 @@
 import maya.cmds as cmds
 
 class LocatorTool():
+    '''select objects, then choose which option you want for the locators, and hit the button'''
     
     def __init__(self):
         self.mWin = "LocToolWindow"

@@ -1,7 +1,8 @@
 import maya.cmds as cmds
 
 class RenameTool():
-    
+    '''type in new name in format of name_hashtags_suffix, and hit enter on the numpad
+    The number of hashtags will determine the number padding'''
     def __init__(self):
         self.mWin = 'RenameWin'
     

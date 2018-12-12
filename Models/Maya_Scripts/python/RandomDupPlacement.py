@@ -2,6 +2,8 @@ import maya.cmds as cmds
 import random
 
 class RandPlaceDupTool():
+    '''type in how many duplicates you want, the min and max xyz ranges for the dups to be in and press the button to 
+    generate duplicates randomly in that range'''
     
     def __init__(self):
         self.mWin = 'RandWin'

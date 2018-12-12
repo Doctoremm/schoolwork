@@ -2,7 +2,7 @@ import sys
 import maya.cmds as cmds
 
 #imports where my scripots are instead of in maya's folder
-sys.path.append('D:\Schoolwork\Models\Maya_Scripts\python')
+sys.path.append('C:\Users\jawae\Desktop\Dareah_Schoolwork\schoolwork\Models\Maya_Scripts\python')
 
 
 class ToolBox():
@@ -19,16 +19,16 @@ class ToolBox():
         cmds.button(parent=self.mCol, label = 'Locator', command=lambda x: self.locatorWin())
         cmds.button(parent=self.mCol, label = 'Joint Chain', command=lambda x: self.jointWin())
         cmds.button(parent=self.mCol, label = 'Random Placement', command=lambda x: self.randWin())
-        cmds.button(parent=self.mCol, label = 'Controls')
+        cmds.button(parent=self.mCol, label = 'Controls', command = lambda x: self.ctrlWin())
 
         cmds.showWindow(self.mWin)
 
     def delete(self):
         if cmds.window(self.mWin, q=True, exists=True):
             cmds.deleteUI(self.mWin)
-            
+    
+    #imports the script        
     def renameWin(self):
-        #imports the script
         import Renamer
         renameTool = Renamer.RenameTool()
         renameTool.create()
@@ -47,6 +47,11 @@ class ToolBox():
         import RandomDupPlacement
         randTool = RandomDupPlacement.RandPlaceDupTool()
         randTool.create()
+        
+    def ctrlWin(self):
+        import ControlCreator
+        ctrlTool = ControlCreator.ControlTool()
+        ctrlTool.create()
 
 tools = ToolBox()
 tools.create()

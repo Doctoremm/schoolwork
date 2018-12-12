@@ -1,6 +1,7 @@
 import maya.cmds as cmds
 
 class JntTool():
+    '''select locators or clusters where you want the joints to be, in the order you want, and hit the button'''
     
     def __init__(self):
         self.mWin = 'JntWin'

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class DeacativeOnInteract : MonoBehaviour, IFPSInteract {
 
+	public GameObject obj;
+
 	public void OnInteract()
 	{
 		if(Input.GetButtonDown("Interact"))
 		{
-			gameObject.SetActive(false);
+			obj.gameObject.SetActive(false);
 		}
 	}
 

@@ -1,15 +1,32 @@
-Base path: C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data
+Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=4 insize=2134 outsize=1517 ok=1
+  api=4 insize=5188 outsize=5373 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=1226 outsize=781 ok=1
+  api=4 insize=1864 outsize=537 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=2863 outsize=47805 ok=1
+  api=4 insize=1505 outsize=581 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=18731 outsize=8681 ok=1
+  api=4 insize=15322 outsize=5401 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=18731 outsize=10769 ok=1
-Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
-
-Quitting shader compiler process
+  api=4 insize=15322 outsize=5209 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6601 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7461 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6781 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=8293 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6541 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7549 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7357 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7949 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=9917 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=9237 ok=1

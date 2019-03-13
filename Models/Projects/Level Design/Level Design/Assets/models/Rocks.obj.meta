@@ -11,6 +11,8 @@ ModelImporter:
     400004: //RootNode
     2100000: lambert2
     2100002: lambert1
+    2100004: pCube1_pCube1Mat
+    2100006: pCube2_pCube2Mat
     2300000: pCube1_pCube1
     2300002: pCube2_pCube2
     3300000: pCube1_pCube1

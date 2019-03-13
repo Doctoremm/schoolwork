@@ -10,6 +10,8 @@ ModelImporter:
     400002: pCylinder2_pCylinder2_1001
     400004: pCylinder3_pCylinder3_1001
     2100000: 1001
+    2100002: pCylinder2_pCylinder2_1001Mat
+    2100004: pCylinder3_pCylinder3_1001Mat
     2300000: pCylinder2_pCylinder2_1001
     2300002: pCylinder3_pCylinder3_1001
     3300000: pCylinder2_pCylinder2_1001

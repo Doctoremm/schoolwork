@@ -82,6 +82,9 @@
  <Reference Include="Unity.PackageManagerUI.Editor">
  <HintPath>D:/Schoolwork/Models/Projects/Level Design/Level Design/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="com.unity.render-pipelines.high-definition.Runtime">
+ <HintPath>D:/Schoolwork/Models/Projects/Level Design/Level Design/Library/ScriptAssemblies/com.unity.render-pipelines.high-definition.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="com.unity.postprocessing.Editor">
  <HintPath>D:/Schoolwork/Models/Projects/Level Design/Level Design/Library/ScriptAssemblies/com.unity.postprocessing.Editor.dll</HintPath>
  </Reference>
@@ -90,6 +93,9 @@
  </Reference>
  <Reference Include="Unity.ShaderGraph.Editor">
  <HintPath>D:/Schoolwork/Models/Projects/Level Design/Level Design/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.render-pipelines.high-defintion.Editor">
+ <HintPath>D:/Schoolwork/Models/Projects/Level Design/Level Design/Library/ScriptAssemblies/com.unity.render-pipelines.high-defintion.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/Schoolwork/Models/Projects/Level Design/Level Design/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

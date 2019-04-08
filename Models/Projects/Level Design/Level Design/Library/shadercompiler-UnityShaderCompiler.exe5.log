@@ -1,22 +1,50 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=4 insize=9421 outsize=8629 ok=1
+  api=4 insize=13402 outsize=16717 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=5089 ok=1
+  api=4 insize=13402 outsize=26873 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=6869 ok=1
+  api=4 insize=13402 outsize=41621 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=7005 ok=1
+  api=4 insize=13402 outsize=17949 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=9429 ok=1
+  api=4 insize=13402 outsize=50405 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=9733 ok=1
+  api=4 insize=13402 outsize=27005 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=8321 ok=1
+  api=4 insize=13402 outsize=25605 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=8825 ok=1
+  api=4 insize=13402 outsize=20157 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=10901 ok=1
+  api=4 insize=13402 outsize=27513 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=15322 outsize=11205 ok=1
+  api=4 insize=13402 outsize=18609 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=20177 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=29829 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=35805 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=19829 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=44789 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=19973 outsize=13509 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=30861 outsize=217 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=19712 outsize=92421 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7569 outsize=2921 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2783 outsize=4089 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6056 outsize=14137 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler

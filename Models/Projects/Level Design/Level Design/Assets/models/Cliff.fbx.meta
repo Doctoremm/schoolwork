@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: 856418c065142944481d5f7ea5f08656
+guid: 9d2755d43f4f87b4a88b4f09abddd150
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: island1
+    2100002: ground
     2300000: //RootNode
     3300000: //RootNode
-    4300000: geo1
+    4300000: island4
   externalObjects: {}
   materials:
     importMaterials: 1
